@@ -7,15 +7,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
-// random sticker placement
-const stickers = document.querySelectorAll('.sticker');
-
-stickers.forEach(sticker => {
-  sticker.style.top = Math.random() * 85 + "%";
-  sticker.style.left = Math.random() * 90 + "%";
-  sticker.style.animationDelay = Math.random() * 4 + "s";
-});
-
 // reveal on scroll
 const reveals = document.querySelectorAll('.reveal');
 
