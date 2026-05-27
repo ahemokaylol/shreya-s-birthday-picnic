@@ -1,110 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Picnic Birthday 🌿</title>
+  <meta charset="UTF-8">
+  <title>Picnic Birthday 🌿</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 
-<style>
-body {
-  margin: 0;
-  font-family: 'Quicksand', sans-serif;
-  background: #F5E9DC;
-  color: #3A4A3F;
-  text-align: center;
-  overflow-x: hidden;
-  position: relative;
-}
-
-/* subtle grain overlay */
-body::after {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url("https://grainy-gradients.vercel.app/noise.svg");
-  opacity: 0.08;
-  pointer-events: none;
-}
-
-/* floating stickers */
-.sticker {
-  position: absolute;
-  font-size: 28px;
-  opacity: 0.9;
-  animation: float 8s ease-in-out infinite;
-}
-
-@keyframes float {
-  0% { transform: translateY(0px) rotate(0deg); }
-  50% { transform: translateY(-25px) rotate(6deg); }
-  100% { transform: translateY(0px) rotate(0deg); }
-}
-
-/* hero */
-.hero {
-  padding: 100px 20px 60px;
-}
-
-h1 {
-  font-size: 2.8em;
-  margin-bottom: 10px;
-}
-
-.tagline {
-  font-size: 1.2em;
-  opacity: 0.75;
-}
-
-/* cards */
-.card {
-  background: white;
-  margin: 25px auto;
-  padding: 25px;
-  max-width: 420px;
-  border-radius: 18px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-}
-
-/* button */
-button {
-  background: #F7D774;
-  border: none;
-  padding: 14px 30px;
-  border-radius: 30px;
-  cursor: pointer;
-  font-size: 1em;
-  transition: all 0.25s ease;
-}
-
-button:hover {
-  transform: scale(1.08);
-}
-
-/* RSVP iframe */
-iframe {
-  width: 100%;
-  height: 500px;
-  border: none;
-  border-radius: 12px;
-}
-
-/* responsive */
-@media (max-width: 600px) {
-  h1 {
-    font-size: 2em;
-  }
-}
-</style>
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-<!-- Floating stickers (auto-positioned with JS) -->
+<!-- FLOATING STICKERS -->
 <div class="sticker">🍓</div>
 <div class="sticker">🌼</div>
 <div class="sticker">☀️</div>
@@ -113,59 +22,47 @@ iframe {
 <div class="sticker">🌿</div>
 
 <!-- HERO -->
-<div class="hero">
-  <h1>🌿 Shreshtha’s Picnic Birthday</h1>
-  <p class="tagline">sunlight, snacks, and soft chaos</p>
-</div>
+<section class="hero">
+  <div class="hero-content">
+    <h1>Shreshtha’s Picnic Birthday 🌿</h1>
+    <p class="subtitle">sunlight, snacks, and soft chaos</p>
 
-<!-- DETAILS -->
-<div class="card">
-  <p><strong>📅 Date:</strong> 20 June (Saturday)</p>
-  <p><strong>🕒 Time:</strong> 11:00 – 13:00</p>
-  <p><strong>📍 Location:</strong> TBD</p>
-</div>
+    <p class="details">📅 Saturday, 20 June</p>
+    <p class="details">🕒 11:00 – 13:00</p>
+    <p class="details">📍 Location: TBD</p>
+
+    <a href="#rsvp" class="btn">RSVP</a>
+  </div>
+</section>
 
 <!-- INFO -->
-<div class="card">
-  <p>🧺 I’ll bring picnic snacks</p>
-  <p>🍹 Drinks are BYOB</p>
-  <p>🪑 Blankets/mats will be there (bring one if you can)</p>
-</div>
-
-<!-- RSVP BUTTON -->
-<div class="card">
-  <button onclick="scrollToRSVP()">RSVP</button>
-</div>
+<section class="section reveal">
+  <div class="card">
+    <p>🧺 I’ll bring picnic snacks</p>
+    <p>🍹 Drinks are BYOB</p>
+    <p>🪑 Blankets/mats will be there (bring one if you can)</p>
+  </div>
+</section>
 
 <!-- RSVP -->
-<div id="rsvp" class="card">
-  <p><strong>RSVP here ↓</strong></p>
+<section id="rsvp" class="section reveal">
+  <h2>RSVP</h2>
 
-  <!-- 👉 Replace this with your Tally embed link -->
-  <iframe src="https://tally.so/embed/YOUR-FORM-ID"></iframe>
+  <form action="https://formspree.io/f/mgoljvbj" method="POST">
+    <input type="text" name="name" placeholder="Your Name" required>
 
-</div>
+    <select name="attendance">
+      <option value="yes">Coming 🌞</option>
+      <option value="no">Can’t make it</option>
+    </select>
 
-<script>
-/* smooth scroll */
-function scrollToRSVP() {
-  document.getElementById("rsvp").scrollIntoView({ behavior: "smooth" });
-}
+    <input type="text" name="comments" placeholder="Message / what you're bringing (optional)">
 
-/* random sticker placement */
-const stickers = document.querySelectorAll('.sticker');
+    <button type="submit">Submit</button>
+  </form>
+</section>
 
-stickers.forEach(sticker => {
-  const top = Math.random() * 85;
-  const left = Math.random() * 90;
-
-  sticker.style.top = top + "%";
-  sticker.style.left = left + "%";
-
-  const delay = Math.random() * 4;
-  sticker.style.animationDelay = delay + "s";
-});
-</script>
+<script src="script.js"></script>
 
 </body>
 </html>
