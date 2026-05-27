@@ -24,12 +24,12 @@
 <!-- HERO -->
 <section class="hero">
   <div class="hero-content">
-    <h1>Shreshtha’s Picnic Birthday 🌿</h1>
+    <h1>Shreya’s Picnic Birthday 🌿</h1>
     <p class="subtitle">sunlight, snacks, and soft chaos</p>
 
     <p class="details">📅 Saturday, 20 June</p>
     <p class="details">🕒 11:00 – 13:00</p>
-    <p class="details">📍 Location: TBD</p>
+    <p class="details">📍 Location: Beaver Lake</p>
 
     <a href="#rsvp" class="btn">RSVP</a>
   </div>
@@ -49,17 +49,48 @@
   <h2>RSVP</h2>
 
   <form action="https://formspree.io/f/mgoljvbj" method="POST">
-    <input type="text" name="name" placeholder="Your Name" required>
 
-    <select name="attendance">
-      <option value="yes">Coming 🌞</option>
-      <option value="no">Can’t make it</option>
+    <!-- Name -->
+    <input 
+      type="text" 
+      name="name" 
+      placeholder="Your Name" 
+      required
+    >
+
+    <!-- Attendance -->
+    <select name="attendance" required>
+      <option value="" disabled selected>
+        Will you be there?
+      </option>
+      <option value="yes">Yes 🌞</option>
+      <option value="maybe">Maybe 🤞</option>
+      <option value="no">No 😔</option>
     </select>
 
-    <input type="text" name="comments" placeholder="Message / what you're bringing (optional)">
+    <!-- Plus one -->
+    <select name="plus_one" required>
+      <option value="" disabled selected>
+        Bringing a plus one?
+      </option>
+      <option value="no">No</option>
+      <option value="yes">Yes</option>
+    </select>
+
+    <!-- Optional comment -->
+    <input 
+      type="text" 
+      name="comments" 
+      placeholder="Message / what you're bringing (optional)"
+    >
 
     <button type="submit">Submit</button>
+
   </form>
+
+  <p id="success-message" style="display:none; margin-top:15px;">
+    🌿 RSVP received — see you at the picnic 💛
+  </p>
 </section>
 
 <script src="script.js"></script>
