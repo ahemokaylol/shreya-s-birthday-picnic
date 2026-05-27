@@ -74,11 +74,23 @@ button {
 }
 
 /* STICKERS */
+/* SIDE STICKERS (clean & minimal) */
 .sticker {
-  position: absolute;
+  position: fixed;
   font-size: 26px;
-  animation: float 7s ease-in-out infinite;
-  opacity: 0.9;
+  opacity: 0.8;
+  pointer-events: none;
+}
+
+/* LEFT SIDE */
+.s1 { top: 15%; left: 20px; }
+.s2 { top: 40%; left: 15px; }
+.s3 { bottom: 15%; left: 25px; }
+
+/* RIGHT SIDE */
+.s4 { top: 20%; right: 20px; }
+.s5 { top: 55%; right: 15px; }
+.s6 { bottom: 20%; right: 25px; }
 }
 
 @keyframes float {
