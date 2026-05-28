@@ -1,112 +1,216 @@
 body {
   margin: 0;
-  font-family: 'Quicksand', sans-serif;
-  background: #F5E9DC;
-  color: #3A4A3F;
-  text-align: center;
+  padding: 0;
   overflow-x: hidden;
+
+  font-family: 'Quicksand', sans-serif;
+  color: #243324;
+
+  background:
+    linear-gradient(
+      135deg,
+      #f7e27b 0%,
+      #d7efc2 45%,
+      #c8e7ff 100%
+    );
+
+  min-height: 100vh;
 }
 
 /* HERO */
+
 .hero {
-  padding: 120px 20px 80px;
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.hero-content {
+  max-width: 520px;
+}
+
+.tiny {
+  font-size: 0.8rem;
+  opacity: 0.6;
+  letter-spacing: 1px;
 }
 
 h1 {
   font-family: 'Playfair Display', serif;
-  font-size: 2.8em;
+
+  font-size: 3rem;
+  line-height: 1.1;
+
+  margin: 12px 0 20px;
 }
 
 .subtitle {
-  font-size: 1.2em;
-  opacity: 0.7;
-}
-
-.details {
+  opacity: 0.75;
   margin: 6px 0;
 }
 
-/* BUTTON */
-.btn {
+.info {
+  margin-top: 30px;
+  line-height: 1.7;
+}
+
+/* RSVP BUTTON */
+
+.link-btn {
   display: inline-block;
-  margin-top: 20px;
-  padding: 12px 26px;
-  background: #F7D774;
-  border-radius: 30px;
+
+  margin-top: 35px;
+
+  color: #243324;
   text-decoration: none;
-  color: #333;
-  transition: 0.3s;
+
+  border-bottom: 1px solid #243324;
+
+  padding-bottom: 3px;
+
+  transition: 0.25s ease;
 }
 
-.btn:hover {
-  transform: scale(1.08);
+.link-btn:hover {
+  transform: translateY(-2px);
 }
 
-/* CARD */
-.card {
-  background: white;
-  margin: 20px auto;
-  padding: 25px;
-  max-width: 420px;
-  border-radius: 16px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+/* RSVP */
+
+.rsvp-section {
+  text-align: center;
+  padding: 100px 20px 80px;
 }
 
-/* FORM */
+h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  margin-bottom: 35px;
+}
+
 form {
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  max-width: 300px;
+
+  gap: 14px;
+
+  width: 100%;
+  max-width: 320px;
+
   margin: auto;
 }
 
-input, select, button {
-  padding: 12px;
-  border-radius: 10px;
+input,
+select,
+button {
   border: none;
+  border-radius: 18px;
+
+  padding: 14px 16px;
+
   font-family: inherit;
+  font-size: 0.95rem;
 }
+
+/* INPUTS */
+
+input,
+select {
+  background: rgba(255,255,255,0.65);
+
+  backdrop-filter: blur(4px);
+}
+
+/* BUTTON */
 
 button {
-  background: #A8C3A0;
+  background: #243324;
+  color: white;
+
   cursor: pointer;
+
+  transition: 0.25s ease;
 }
 
-/* STICKERS */
-/* SIDE STICKERS (clean & minimal) */
-.sticker {
-  position: fixed;
-  font-size: 26px;
+button:hover {
+  transform: scale(1.03);
+}
+
+/* SUCCESS */
+
+#success-message {
+  display: none;
+  margin-top: 24px;
   opacity: 0.8;
+}
+
+/* FOOTER */
+
+footer {
+  text-align: center;
+  padding: 20px 20px 60px;
+}
+
+footer a {
+  color: #243324;
+  text-decoration: none;
+  border-bottom: 1px solid #243324;
+}
+
+.tiny-note {
+  margin-top: 30px;
+
+  opacity: 0.45;
+  font-size: 0.75rem;
+}
+
+/* SCRIBBLES */
+
+.scribble {
+  position: fixed;
+
+  opacity: 0.15;
+
   pointer-events: none;
+
+  font-size: 32px;
 }
 
-/* LEFT SIDE */
-.s1 { top: 15%; left: 20px; }
-.s2 { top: 40%; left: 15px; }
-.s3 { bottom: 15%; left: 25px; }
-
-/* RIGHT SIDE */
-.s4 { top: 20%; right: 20px; }
-.s5 { top: 55%; right: 15px; }
-.s6 { bottom: 20%; right: 25px; }
+.s1 {
+  top: 10%;
+  left: 5%;
 }
 
-@keyframes float {
-  0% { transform: translateY(0px) rotate(0deg); }
-  50% { transform: translateY(-20px) rotate(6deg); }
-  100% { transform: translateY(0px) rotate(0deg); }
+.s2 {
+  top: 20%;
+  right: 8%;
 }
 
-/* SECTIONS */
-.section {
-  padding: 60px 20px;
+.s3 {
+  bottom: 18%;
+  left: 8%;
+}
+
+.s4 {
+  bottom: 12%;
+  right: 10%;
 }
 
 /* MOBILE */
+
 @media (max-width: 600px) {
+
   h1 {
-    font-size: 2em;
+    font-size: 2.3rem;
   }
+
+  .hero {
+    padding-top: 60px;
+  }
+
 }
