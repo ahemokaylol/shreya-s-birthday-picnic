@@ -8,7 +8,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Quicksand:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
-  <!-- Scribbles -->
+  <!-- SCRIBBLES -->
   <div class="scribble s1">✿</div>
   <div class="scribble s2">~~~</div>
   <div class="scribble s3">☼</div>
@@ -23,30 +23,11 @@
       <div class="details">
         <p class="subtitle">Saturday, 20 June · 11:00 – 13:00</p>
         <p class="subtitle">
-          <a href="https://maps.app.goo.gl/vvvFHDhbfaD9DyYg6" target="_blank" class="location-link">
+          <a href="https://maps.app.goo.gl/vvvFHDhbfaD9DyYg6" 
+             target="_blank" class="location-link">
             📍 Beaver Lake Fountain
           </a>
         </p>
-      </div>
-
-      <!-- COUNTDOWN -->
-      <div class="countdown" id="countdown">
-        <div class="time-box">
-          <span id="days">00</span>
-          <small>days</small>
-        </div>
-        <div class="time-box">
-          <span id="hours">00</span>
-          <small>hours</small>
-        </div>
-        <div class="time-box">
-          <span id="minutes">00</span>
-          <small>minutes</small>
-        </div>
-        <div class="time-box">
-          <span id="seconds">00</span>
-          <small>seconds</small>
-        </div>
       </div>
 
       <div class="info">
@@ -62,7 +43,7 @@
   <section id="rsvp" class="rsvp-section">
     <h2>let me know :)</h2>
     
-    <form action="https://formspree.io/f/mzdwyydy" method="POST" id="rsvp-form">
+    <form id="rsvp-form">
       <input type="text" name="name" placeholder="your name" required>
       
       <select name="attendance" id="attendance-select" required>
@@ -81,9 +62,7 @@
       <button type="submit">send</button>
     </form>
 
-    <p id="success-message" class="hidden">
-      🌿 got it — see you at the picnic!
-    </p>
+    <p id="success-message">🌿 got it — see you at the picnic!</p>
   </section>
 
   <!-- FOOTER -->
