@@ -1,30 +1,9 @@
-// Countdown Timer
-function startCountdown() {
-  const eventDate = new Date("June 20, 2026 11:00:00").getTime();
+// Scroll to top on page load/refresh
+window.addEventListener('load', () => {
+  window.scrollTo(0, 0);
+});
 
-  setInterval(() => {
-    const now = new Date().getTime();
-    const distance = eventDate - now;
-
-    if (distance < 0) {
-      document.getElementById("countdown").innerHTML = 
-        `<p style="font-size:1.3rem; margin:20px 0;">🎉 It's picnic day!</p>`;
-      return;
-    }
-
-    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-    document.getElementById("days").textContent = String(days).padStart(2, '0');
-    document.getElementById("hours").textContent = String(hours).padStart(2, '0');
-    document.getElementById("minutes").textContent = String(minutes).padStart(2, '0');
-    document.getElementById("seconds").textContent = String(seconds).padStart(2, '0');
-  }, 1000);
-}
-
-// Confetti
+// Confetti Function
 function launchConfetti() {
   const canvas = document.getElementById('confetti');
   const ctx = canvas.getContext('2d');
@@ -83,25 +62,44 @@ function launchConfetti() {
   }, 5000);
 }
 
-// Form Submission
-document.getElementById('rsvp-form').addEventListener('submit', function(e) {
+// Form Submission (AJAX - No Formspree redirect)
+document.getElementById('rsvp-form').addEventListener('submit', async function(e) {
   e.preventDefault();
   
+  const form = this;
   const attendance = document.getElementById('attendance-select').value;
+  const formData = new FormData(form);
 
-  this.style.transition = 'opacity 0.4s';
-  this.style.opacity = '0';
+  // Submit to Formspree via fetch
+  try {
+    const response = await fetch('https://formspree.io/f/mzdwyydy', {
+      method: 'POST',
+      body: formData,
+      headers: {
+        'Accept': 'application/json'
+      }
+    });
 
-  setTimeout(() => {
-    this.style.display = 'none';
-    document.getElementById('success-message').style.display = 'block';
+    if (response.ok) {
+      // Success
+      form.style.transition = 'opacity 0.4s';
+      form.style.opacity = '0';
 
-    if (attendance === 'yes') {
-      launchConfetti();
+      setTimeout(() => {
+        form.style.display = 'none';
+        document.getElementById('success-message').style.display = 'block';
+
+        if (attendance === 'yes') {
+          launchConfetti();
+        }
+      }, 400);
+    } else {
+      alert("Something went wrong. Please try again.");
     }
-  }, 500);
+  } catch (error) {
+    alert("Connection error. Please check your internet and try again.");
+  }
 });
 
-// Initialize
+// Initialize everything
 startCountdown();
-}
