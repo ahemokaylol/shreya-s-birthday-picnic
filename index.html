@@ -1,106 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Picnic Birthday 🌿</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shreya’s Birthday Picnic 🌿</title>
 
   <link rel="stylesheet" href="style.css">
 
   <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Quicksand:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-<!-- FLOATING STICKERS -->
-<div class="sticker s1">🍓</div>
-<div class="sticker s2">🌼</div>
-<div class="sticker s3">🌿</div>
+<!-- SCRIBBLES -->
+<div class="scribble s1">✿</div>
+<div class="scribble s2">~~~</div>
+<div class="scribble s3">☼</div>
+<div class="scribble s4">◌</div>
 
-<div class="sticker s4">☀️</div>
-<div class="sticker s5">🧺</div>
-<div class="sticker s6">🍹</div>
-
-<!-- HERO -->
+<!-- MAIN -->
 <section class="hero">
+
   <div class="hero-content">
-   <h1>Shreya’s Birthday Picnic 🌿</h1>
-<p class="subtitle"> for the perfect summer vibes</p>
 
-    <p class="details">📅 Saturday, 20 June</p>
-    <p class="details">🕒 11:00 – 13:00</p>
-    <p class="details">📍 Location: Beaver Lake</p>
+    <p class="tiny">you’re invited to</p>
 
-    <a href="#rsvp" class="btn">RSVP</a>
+    <h1>Shreya’s Birthday Picnic 🌿</h1>
+
+    <p class="subtitle">
+      saturday, 20 june · 11:00 — 13:00
+    </p>
+
+    <p class="subtitle">
+      location: beaver park
+    </p>
+
+    <div class="info">
+      <p>🤙🏻 Snacks are on me · BYOB</p>
+      <p>Please get a beach blanket or a mat if you can 🌿</p>
+    </div>
+
+    <a href="#rsvp" class="link-btn">
+      count me in →
+    </a>
+
   </div>
-</section>
 
-<!-- INFO -->
-<section class="section reveal">
-  <div class="card">
-    <p>🧺 I’ll bring picnic snacks</p>
-    <p>🍹 Drinks are BYOB</p>
-    <p>🪑 Blankets/mats will be there (bring one if you can)</p>
-  </div>
 </section>
 
 <!-- RSVP -->
-<section id="rsvp" class="section reveal">
-  <h2>RSVP</h2>
+<section id="rsvp" class="rsvp-section">
 
-  <form action="https://formspree.io/f/mgoljvbj" method="POST">
+  <h2>let me know :)</h2>
 
-    <!-- Name -->
+  <form 
+    action="https://formspree.io/f/mgoljvbj" 
+    method="POST"
+    id="rsvp-form"
+  >
+
     <input 
       type="text" 
       name="name" 
-      placeholder="Your Name" 
+      placeholder="your name" 
       required
     >
 
-    <!-- Attendance -->
     <select name="attendance" required>
       <option value="" disabled selected>
-        Will you be there?
+        will you be there?
       </option>
-      <option value="yes">Yes 🌞</option>
-      <option value="maybe">Maybe 🤞</option>
-      <option value="no">No 😔</option>
+
+      <option value="yes">
+        yes 🌞
+      </option>
+
+      <option value="maybe">
+        maybe 🤞
+      </option>
+
+      <option value="no">
+        no 😔
+      </option>
     </select>
 
-    <!-- Plus one -->
-    <select name="plus_one" required>
+    <select name="plus_one">
       <option value="" disabled selected>
-        Bringing a plus one?
+        bringing a plus one?
       </option>
-      <option value="no">No</option>
-      <option value="yes">Yes</option>
+
+      <option value="no">
+        no
+      </option>
+
+      <option value="yes">
+        yes
+      </option>
     </select>
 
-    <!-- Optional comment -->
-    <input 
-      type="text" 
-      name="comments" 
-      placeholder="Message / what you're bringing (optional)"
-    >
-
-    <button type="submit">Submit</button>
+    <button type="submit">
+      send
+    </button>
 
   </form>
 
-  <p id="success-message" style="display:none; margin-top:15px;">
-    🌿 RSVP received — see you at the picnic 💛
+  <p id="success-message">
+    🌿 got it — see you at the picnic
   </p>
+
 </section>
 
-<section class="section reveal">
-  <div class="card">
-    <p><strong>Need anything?</strong></p>
-    <p>📞 WhatsApp / Call</p>
-    <p><strong>+1 (263) 355-2761</strong></p>
-  </div>
-</section>
+<!-- FOOTER -->
+<footer>
+  <a 
+    href="https://wa.me/+12633552761" 
+    target="_blank"
+  >
+    questions? text me
+  </a>
+
+  <p class="tiny-note">
+    hopefully there’s good weather.
+  </p>
+</footer>
 
 <script src="script.js"></script>
 
