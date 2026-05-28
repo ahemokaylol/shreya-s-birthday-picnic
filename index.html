@@ -1,22 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
   <title>Shreya’s Birthday Picnic 🌿</title>
-
-  <!-- CSS -->
   <link rel="stylesheet" href="style.css">
-
-  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Quicksand:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
-
 <body>
-
-  <!-- SCRIBBLES -->
+  <!-- Scribbles -->
   <div class="scribble s1">✿</div>
   <div class="scribble s2">~~~</div>
   <div class="scribble s3">☼</div>
@@ -24,125 +16,85 @@
 
   <!-- HERO -->
   <section class="hero">
-
     <div class="hero-content">
+      <p class="tiny">you’re invited to</p>
+      <h1>Shreya’s Birthday Picnic 🌸🍦</h1>
+      
+      <div class="details">
+        <p class="subtitle">Saturday, 20 June · 11:00 – 13:00</p>
+        <p class="subtitle">
+          <a href="https://maps.app.goo.gl/vvvFHDhbfaD9DyYg6" target="_blank" class="location-link">
+            📍 Beaver Lake Fountain
+          </a>
+        </p>
+      </div>
 
-      <p class="tiny">
-        you’re invited to
-      </p>
-
-      <h1>
-        Shreya’s Birthday Picnic 🌸🍦
-      </h1>
-
-      <p class="subtitle">
-        saturday, 20 june · 11:00 — 13:00
-      </p>
-
-      <p class="subtitle">
-        <a 
-          href="https://maps.app.goo.gl/vvvFHDhbfaD9DyYg6?g_st=ic"
-          target="_blank"
-          class="location-link"
-        >
-          📍 Beaver Lake Fountain
-        </a>
-      </p>
+      <!-- COUNTDOWN -->
+      <div class="countdown" id="countdown">
+        <div class="time-box">
+          <span id="days">00</span>
+          <small>days</small>
+        </div>
+        <div class="time-box">
+          <span id="hours">00</span>
+          <small>hours</small>
+        </div>
+        <div class="time-box">
+          <span id="minutes">00</span>
+          <small>minutes</small>
+        </div>
+        <div class="time-box">
+          <span id="seconds">00</span>
+          <small>seconds</small>
+        </div>
+      </div>
 
       <div class="info">
         <p>🤙🏻 Snacks are on me · BYOB</p>
-        <p>Please get a beach blanket or a mat if you can ⛱️</p>
+        <p>Please bring a beach blanket or mat if you can ⛱️</p>
       </div>
 
-      <a href="#rsvp" class="link-btn">
-        count me in →
-      </a>
-
+      <a href="#rsvp" class="link-btn">count me in →</a>
     </div>
-
   </section>
 
   <!-- RSVP -->
   <section id="rsvp" class="rsvp-section">
-
     <h2>let me know :)</h2>
-
-    <form
-   action="https://formspree.io/f/mzdwyydy"
-   method="POST"
-   id="rsvp-form"
-   >
-
-      <input
-        type="text"
-        name="name"
-        placeholder="your name"
-        required
-      >
-
-      <select name="attendance" required>
-        <option value="" disabled selected>
-          will you be there?
-        </option>
-
-        <option value="yes">
-          yes 🌞
-        </option>
-
-        <option value="maybe">
-          maybe 🤞
-        </option>
-
-        <option value="no">
-          no 😔
-        </option>
+    
+    <form action="https://formspree.io/f/mzdwyydy" method="POST" id="rsvp-form">
+      <input type="text" name="name" placeholder="your name" required>
+      
+      <select name="attendance" id="attendance-select" required>
+        <option value="" disabled selected>will you be there?</option>
+        <option value="yes">yes 🌞</option>
+        <option value="maybe">maybe 🤞</option>
+        <option value="no">no 😔</option>
       </select>
 
       <select name="plus_one">
-        <option value="" disabled selected>
-          bringing a plus one?
-        </option>
-
-        <option value="yes">
-          yes
-        </option>
-
-        <option value="no">
-          no
-        </option>
+        <option value="" disabled selected>bringing a plus one?</option>
+        <option value="yes">yes</option>
+        <option value="no">no</option>
       </select>
 
-      <button type="submit">
-        send
-      </button>
-
+      <button type="submit">send</button>
     </form>
 
-    <p id="success-message">
-      🌿 got it — see you at the picnic
+    <p id="success-message" class="hidden">
+      🌿 got it — see you at the picnic!
     </p>
-
   </section>
 
   <!-- FOOTER -->
   <footer>
-
-    <a
-      href="https://wa.me/12633552761"
-      target="_blank"
-      class="footer-link"
-    >
+    <a href="https://wa.me/12633552761" target="_blank" class="footer-link">
       questions? text me
     </a>
-
-    <p class="tiny-note">
-      hopefully there’s good weather.
-    </p>
-
+    <p class="tiny-note">hopefully there’s good weather ☀️</p>
   </footer>
 
-  <!-- JS -->
- <script src="script.js"></script>
-
+  <canvas id="confetti"></canvas>
+  <script src="script.js"></script>
 </body>
 </html>
