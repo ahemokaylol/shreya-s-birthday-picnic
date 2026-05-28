@@ -17,7 +17,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 
-// RSVP submit
+// RSVP FORM
 
 const form = document.getElementById("rsvp-form");
 const successMessage = document.getElementById("success-message");
@@ -46,4 +46,5 @@ form.addEventListener("submit", async function(e) {
 
   }
 
+});
 });
