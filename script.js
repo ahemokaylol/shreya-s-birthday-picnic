@@ -1,4 +1,4 @@
-// smooth scroll
+// SMOOTH SCROLL
 
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
@@ -6,45 +6,71 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
     e.preventDefault();
 
-    document
-      .querySelector(this.getAttribute("href"))
-      .scrollIntoView({
+    const target = document.querySelector(
+      this.getAttribute("href")
+    );
+
+    if (target) {
+
+      target.scrollIntoView({
         behavior: "smooth"
       });
+
+    }
 
   });
 
 });
 
 
-// RSVP FORM
+
+// RSVP FORM SUBMISSION
 
 const form = document.getElementById("rsvp-form");
 const successMessage = document.getElementById("success-message");
 
-form.addEventListener("submit", async function(e) {
+if (form) {
 
-  e.preventDefault();
+  form.addEventListener("submit", async function(e) {
 
-  const data = new FormData(form);
+    e.preventDefault();
 
-  const response = await fetch(form.action, {
-    method: "POST",
-    body: data,
-    headers: {
-      'Accept': 'application/json'
+    const formData = new FormData(form);
+
+    try {
+
+      const response = await fetch(form.action, {
+
+        method: "POST",
+
+        body: formData,
+
+        headers: {
+          "Accept": "application/json"
+        }
+
+      });
+
+      if (response.ok) {
+
+        form.reset();
+
+        form.style.display = "none";
+
+        successMessage.style.display = "block";
+
+      } else {
+
+        alert("something went wrong :( try again");
+
+      }
+
+    } catch (error) {
+
+      alert("connection error :( try again");
+
     }
+
   });
 
-  if (response.ok) {
-
-    form.reset();
-
-    form.style.display = "none";
-
-    successMessage.style.display = "block";
-
-  }
-
-});
-});
+}
